@@ -14,7 +14,7 @@ class InferlessPythonModel:
 
     def infer(self, inputs):
         prompt = inputs["prompt"]
-        return self.pipeline(prompt)
+        return self.pipeline(prompt)[0]['generated_text']
 
     def finalize(self):
         self.pipeline = None
